@@ -1,85 +1,267 @@
-*{
+/* Restablece los márgenes y rellenos de todos los elementos para un control total del diseño. */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
-    --Color-fondo: black;
-    --Color-titulo-superior: white;
+/* Define variables de color para usar en todo el CSS, facilitando cambios globales. */
+:root {
+    --Color-fondo: black; /* Color principal para fondos oscuros. */
+    --Color-titulo-superior: white; /* Color para textos que van sobre fondos oscuros. */
+    --Color-fondos-opacos: rgb(202, 202, 202); /* Un color gris claro para elementos de fondo. */
 }
 
 /* PARTE SUPERIOR, FRANJA NEGRA */
-.navegador__seccion-superior{
-    background-color: var(--Color-fondo);
-    height: 40px;
+/* Estilos para la barra superior del encabezado, que contiene el mensaje de envío. */
+.header-principal__barra-envio {
+    background-color: var(--Color-fondo); /* Aplica el color de fondo definido. */
+    height: 40px; /* Establece la altura de la barra. */
 }
 
-.seccion-superior__imagen{
-    width: 25px;
-    height: 25px;
-    margin-left: 20px;
-    margin-top: 8px;
+/* Estilos para el ícono de la caja dentro de la barra de envío. */
+.barra-envio__icono {
+    width: 25px; /* Ancho del ícono. */
+    height: 25px; /* Alto del ícono. */
+    margin-left: 20px; /* Espacio desde el borde izquierdo. */
+    margin-top: 8px; /* Espacio desde el borde superior. */
 }
 
-.seccion-superior__titulo{
-    color: var(--Color-titulo-superior);
-    display: inline-block;
-    font-size: 15px;
-    vertical-align: middle;
-    margin-top: -20px;
-    margin-left: 10px;
-    font-family:Georgia, 'Times New Roman', Times, serif ;
+/* Estilos para el texto del mensaje de envío gratuito. */
+.barra-envio__mensaje {
+    color: var(--Color-titulo-superior); /* Color del texto, definido en las variables. */
+    display: inline-block; /* Permite que el texto y el ícono estén en la misma línea. */
+    font-size: 15px; /* Tamaño de la fuente. */
+    vertical-align: middle; /* Alinea el texto verticalmente con otros elementos en la línea. */
+    margin-top: -20px; /* Ajusta la posición vertical del texto. */
+    margin-left: 10px; /* Espacio entre el ícono y el texto. */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Define el tipo de letra. */
 }
 
-.navegacion{
-    float: right;
-    margin-top: -27px;
-    margin-right: 50px;
+/* Estilos para el contenedor de la navegación secundaria a la derecha de la barra de envío. */
+.navegacion-secundaria {
+    float: right; /* Mueve este elemento a la derecha de su contenedor. */
+    margin-top: -27px; /* Ajusta la posición vertical. */
+    margin-right: 50px; /* Espacio desde el borde derecho. */
 }
 
-.navegacion__enlaces{
-    color: white;
-    margin-right: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+/* Estilos para los enlaces dentro de la navegación secundaria (Acerca de, Contacto, Asistencia). */
+.navegacion-secundaria__enlace {
+    color: var(--Color-titulo-superior); /* Color de los enlaces. */
+    margin-right: 20px; /* Espacio entre los enlaces. */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Tipo de letra. */
 }
 
-.navegacion__titulo{
-    font-size: 15px;
-    display: inline-block;
-    color: white;
+/* Estilos para el número de teléfono en la navegación secundaria. */
+.navegacion-secundaria__telefono {
+    font-size: 15px; /* Tamaño de la fuente. */
+    display: inline-block; /* Mantiene el texto en la misma línea. */
+    color: var(--Color-titulo-superior); /* Color del texto. */
 }
 
 /* SECCION MEDIA NAVEGADOR */
-.seccion-media{
-    height: 100px;
-}
-.seccion-media__titulo{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 35px;
-    margin-left: 40px;
-    margin-top: 25px;
-    position: absolute;
-}
-.seccion-media__buscar{
-    width: 250px;
-    height: 30px;
-    background-color: rgb(202, 202, 202);
-    margin-left: 300px;
-    margin-top: 35px;
-    border-radius: 20px;
-    border: 1px solid black;
-}
-.seccion-media__imagen{
-    width: 20px;
-    float: left;
-    margin-left: 15px;
+/* Estilos para la barra del logo y la búsqueda, en la parte media del encabezado. */
+.header-principal__barra-logo {
+    height: 100px; /* Altura de esta barra. */
 }
 
+/* Estilos para el título "NovoTec" en la barra del logo. */
+.barra-logo__titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Tipo de letra. */
+    font-size: 35px; /* Tamaño de la fuente. */
+    margin-left: 40px; /* Espacio desde el borde izquierdo. */
+    margin-top: 25px; /* Espacio desde el borde superior. */
+    position: absolute; /* Posiciona el título de forma precisa. */
+}
+
+/* Estilos para el botón de búsqueda. */
+.barra-logo__boton-buscar {
+    width: 250px; /* Ancho del botón. */
+    height: 30px; /* Alto del botón. */
+    background-color: var(--Color-fondos-opacos); /* Color de fondo gris claro. */
+    margin-left: 300px; /* Espacio desde el borde izquierdo. */
+    margin-top: 35px; /* Espacio desde el borde superior. */
+    border-radius: 20px; /* Hace que los bordes sean redondeados. */
+    border: 1px solid black; /* Agrega un borde delgado de color negro. */
+}
+
+/* Estilos para el ícono de la lupa dentro del botón de búsqueda. */
+.barra-logo__icono-buscar {
+    width: 20px; /* Ancho del ícono. */
+    float: left; /* Mueve el ícono a la izquierda dentro del botón. */
+    margin-left: 15px; /* Espacio a la izquierda del ícono. */
+}
+
+/* Estilos para la sección de usuario (Entrar, Favoritos, Carrito). */
+.barra-logo__usuario {
+    float: right; /* Mueve la sección de usuario a la derecha. */
+    margin-right: 50px; /* Espacio desde el borde derecho. */
+    position: relative; /* Permite posicionar los elementos internos de forma precisa. */
+}
+
+/* Estilos generales para los íconos de usuario, corazón y carrito. */
+.usuario__icono {
+    width: 30px; /* Ancho de los íconos. */
+    position: absolute; /* Posiciona el ícono de forma precisa. */
+    margin-top: 30px; /* Espacio desde el borde superior. */
+    display: inline-block; /* Muestra el ícono en línea. */
+    margin-left: 250px; /* Espacio desde el borde izquierdo. */
+}
+
+/* Estilos generales para los textos "Entrar" y "Favoritos". */
+.usuario__texto {
+    display: inline-block; /* Muestra el texto en línea. */
+    margin-right: 70px; /* Espacio a la derecha del texto. */
+    margin-top: 35px; /* Espacio desde el borde superior. */
+    margin-left: 290px; /* Espacio desde el borde izquierdo. */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Tipo de letra. */
+    font-size: 20px; /* Tamaño de la fuente. */
+}
+
+/* Estilos específicos para el ícono del corazón. */
+.usuario__icono-corazon {
+    width: 30px; /* Ancho del ícono. */
+    position: absolute; /* Posiciona el ícono de forma precisa. */
+    margin-top: 30px; /* Espacio desde el borde superior. */
+    display: inline-block; /* Muestra el ícono en línea. */
+    right: 255px; /* Posición desde el borde derecho. */
+}
+
+/* Estilos específicos para el texto "Favoritos". */
+.usuario__texto-favoritos {
+    font-size: 20px; /* Tamaño de la fuente. */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Tipo de letra. */
+    display: inline-block; /* Muestra el texto en línea. */
+    margin-right: 120px; /* Espacio a la derecha del texto. */
+}
+
+/* Estilos específicos para el ícono del carrito de compras. */
+.usuario__icono-carrito {
+    width: 30px; /* Ancho del ícono. */
+    position: absolute; /* Posiciona el ícono de forma precisa. */
+    margin-top: 30px; /* Espacio desde el borde superior. */
+    right: 90px; /* Posición desde el borde derecho. */
+}
+
+/* Estilos para el contador de artículos en el carrito. */
+.usuario__contador {
+    font-size: 30px; /* Tamaño de la fuente. */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Tipo de letra. */
+    display: inline-block; /* Muestra el contador en línea. */
+    position: relative; /* Permite un ajuste fino de la posición. */
+    right: 60px; /* Ajusta la posición horizontal. */
+}
 
 /* SECCION INFERIOR NAVEGADOR */
-.seccion-inferior{
-    height: 40px;
-    background-color: rgb(202, 202, 202);
+/* Estilos para la barra de categorías. */
+.header-principal__barra-categorias {
+    height: 40px; /* Altura de la barra. */
+    background-color: var(--Color-fondos-opacos); /* Color de fondo gris claro. */
+    margin-top: 5px; /* Espacio desde la barra superior. */
 }
 
+/* Estilos para los enlaces de las categorías (Compra todo, Computadoras, etc.). */
+.barra-categorias__enlace {
+    text-decoration: none; /* Elimina el subrayado de los enlaces. */
+    color: var(--Color-fondo); /* Color del texto de los enlaces. */
+    font-family: cursive; /* Tipo de letra. */
+    font-size: 15px; /* Tamaño de la fuente. */
+    padding-right: 10px; /* Espacio a la derecha de cada enlace. */
+    margin-left: 20px; /* Espacio desde el borde izquierdo del primer enlace. */
+    display: inline-block; /* Muestra los enlaces en la misma línea. */
+    margin-top: 10px; /* Espacio desde el borde superior de la barra. */
+}
+
+/* SECCION CONTENIDO PRINCIPAL */
+/* Estilos generales para la sección principal de contenido. */
+.contenido-principal {
+    background-color: var(--Color-fondo); /* Color de fondo negro. */
+}
+
+/* Estilos para la imagen principal de fondo (ej. el reloj digital). */
+.contenido-principal__imagen {
+    width: 1920px; /* Ancho de la imagen. */
+    object-fit: contain; /* Ajusta la imagen para que quepa sin recortar. */
+}
+
+/* Reafirma estilos para la sección principal, a menudo para contener otros elementos. */
+.contenido-principal {
+    position: relative; /* Permite posicionar elementos internos de forma absoluta. */
+    width: 100%; /* Ocupa todo el ancho disponible. */
+    height: 100vh; /* Ocupa toda la altura de la ventana del navegador. */
+    overflow: hidden; /* Oculta cualquier contenido que se salga de los límites. */
+}
+
+/* Reafirma estilos para la imagen principal de fondo, a veces con ajustes de tamaño. */
+.contenido-principal__imagen {
+    width: 100%; /* Ancho completo del contenedor. */
+    height: 100%; /* Alto completo del contenedor. */
+    object-fit: cover; /* Ajusta la imagen para que cubra todo el espacio, recortando si es necesario. */
+    display: block; /* La imagen ocupa toda su propia línea. */
+}
+
+/* Estilos para el cuadro de información superpuesto en la imagen principal. */
+.contenido-principal__info {
+    position: absolute; /* Posiciona este cuadro de forma precisa sobre la imagen. */
+    top: 40%; /* Ubica el cuadro a 40% desde la parte superior. */
+    left: 60%; /* Ubica el cuadro a 60% desde la parte izquierda. */
+    transform: translateY(-50%); /* Centra el cuadro verticalmente. */
+    color: white; /* Color del texto dentro del cuadro. */
+    z-index: 2; /* Asegura que este cuadro esté por encima de otros elementos. */
+    max-width: 40%; /* Ancho máximo del cuadro. */
+}
+
+/* Estilos para el título "Mejores Precios" dentro del cuadro de información. */
+.contenido-principal__titulo {
+    font-size: 3rem; /* Tamaño de la fuente. */
+    background-color: red; /* Fondo rojo para el título. */
+    padding: 0.2rem 0.6rem; /* Espacio alrededor del texto del título. */
+    display: inline-block; /* Permite que el fondo rojo se ajuste al texto. */
+    margin-bottom: 1rem; /* Espacio debajo del título. */
+}
+
+/* Estilos para los mensajes de promoción como "Súper precios". */
+.contenido-principal__promocion {
+    font-size: 5rem; /* Tamaño de fuente muy grande. */
+    font-weight: bold; /* Texto en negrita. */
+    margin: 0; /* Sin márgenes. */
+}
+
+/* Estilos para el texto de invitación "Gana más por tu dinero". */
+.contenido-principal__invitacion {
+    margin-top: 1rem; /* Espacio superior. */
+    font-size: 2rem; /* Tamaño de la fuente. */
+}
+
+/* Estilos para el botón "Comprar ahora". */
+.contenido-principal__boton {
+    display: inline-block; /* Muestra el botón en línea. */
+    margin-top: 1.5rem; /* Espacio superior. */
+    padding: 0.8rem 2rem; /* Espacio dentro del botón. */
+    background-color: #7300ff; /* Color de fondo morado. */
+    color: white; /* Color del texto del botón. */
+    text-decoration: none; /* Elimina el subrayado si es un enlace. */
+    border-radius: 2rem; /* Hace que el botón sea muy redondeado. */
+    font-weight: bold; /* Texto en negrita. */
+}
+
+/* PIE DE PAGINA */
+/* Estilos para la sección del pie de página. */
+.pie-pagina {
+    background-color: var(--Color-fondo); /* Color de fondo negro. */
+    color: #eee; /* Color del texto gris claro. */
+    padding: 20px; /* Espacio interno alrededor del contenido. */
+    text-align: center; /* Centra el texto. */
+    font-family: sans-serif; /* Tipo de letra sin serifa. */
+}
+
+/* Estilos para los enlaces dentro del pie de página (ej. Términos y condiciones). */
+.pie-pagina__enlace {
+    color: #ccc; /* Color del enlace. */
+    text-decoration: none; /* Elimina el subrayado del enlace. */
+}
+
+/* Estilos para cuando el cursor pasa sobre los enlaces del pie de página. */
+.pie-pagina__enlace:hover {
+    text-decoration: underline; /* Agrega un subrayado al pasar el cursor. */
+}
